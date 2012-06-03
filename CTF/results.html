@@ -1,0 +1,20 @@
+{% if results_list %}
+    <ul>
+    <h1> Results tabulated by the CTF: </h1>
+    <table border="1">
+    <tr>
+    <th>Unique String</th>
+    <th>Vote (1=Yes, 2=No)</th>
+    </tr>
+    {% for object in results_list %}
+        <tr>
+	<td>{{object.US}}</td>
+	<td>{{object.votes}}</td>
+	</tr>
+    {% endfor %}
+    </table>
+    </ul>
+{% else %}
+    <p>No votes have been submitted.</p>
+{% endif %}
+<img src="/results_pie.png" width="500px">
